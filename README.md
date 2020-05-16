@@ -20,9 +20,7 @@
 
 程序员导航站：[https://iiter.cn](https://iiter.cn)
 
-公众号 `前端糖果屋`
-![202052154453](https://static.iiter.cn/article/202052154453.png)
-
 1. 看到这里啦，点个 `在看` 支持一下吧。
 2. 关注公众号 `前端糖果屋` 互相学习鸭。
 3. 添加微信 [uumovies] ，拉你进 `技术交流群` 探讨人生。
+   ![202052154453](https://static.iiter.cn/mp_footer.png)
