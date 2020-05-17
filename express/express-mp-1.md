@@ -105,7 +105,8 @@ npm install jssha
 ```
 
 - 然后在工程的 **routes** 文件夹下创建一个 **wechat.js** 文件，写入以下内容
-> 注意：wechat.js文件中有个**自定义Token**，这个Token必须为**英文或数字**，长度为**3-32字符**。
+  > 注意：wechat.js 文件中有个**自定义 Token**，这个 Token 必须为**英文或数字**，长度为**3-32 字符**。
+
 ```javascript
 const express = require("express");
 const router = express.Router();
@@ -113,7 +114,7 @@ const jsSHA = require("jssha");
 /**
  * 授权验证
  */
-router.get("/", function(req, res, next) {
+router.get("/", function (req, res, next) {
   const token =
     "这里是你的自定义Tken，与公众平台的Token相对应，不然会验证不成功";
   //1.获取微信服务器Get请求的参数 signature、timestamp、nonce、echostr
@@ -143,17 +144,21 @@ router.get("/", function(req, res, next) {
 });
 module.exports = router;
 ```
-- 打开根目录下app.js文件，引入该路由并注册
+
+- 打开根目录下 app.js 文件，引入该路由并注册
+
 ```javascript
 const wechatRouter = require("./routes/wechat");
 ```
+
 ```javascript
 app.use("/wechat", wechatRouter);
 ```
+
 本地验证路由地址毫无疑问就是 http://localhost:3000/wehat
-完后将整个工程打包放到线上环境，这里推荐使用**宝塔面板**结合**pm2进程管理**工具部署express工程，真的会简化好多操作！！！
+完后将整个工程打包放到线上环境，这里推荐使用**宝塔面板**结合**pm2 进程管理**工具部署 express 工程，真的会简化好多操作！！！
 假定我们部署后映射的线上域名是 https://www.iiter.cn
-ok  我们接下来打开微信公众平台配置。
+ok 我们接下来打开微信公众平台配置。
 
 ### 微信公众平台配置
 
@@ -161,8 +166,8 @@ ok  我们接下来打开微信公众平台配置。
 ![image.png](https://i.loli.net/2020/02/27/pVE9UTBWShMLgC5.png)
 然后填写服务器配置
 ![image.png](https://i.loli.net/2020/02/27/Yt1DiIVbMjK2Efr.png)
-URL 为线上的 验证Token的路由地址，当然是 https://www.iiter.cn/wechat
-Token 这里的Token就是刚刚上一步自定义的Token，复制过来粘贴即可。
+URL 为线上的 验证 Token 的路由地址，当然是 https://www.iiter.cn/wechat
+Token 这里的 Token 就是刚刚上一步自定义的 Token，复制过来粘贴即可。
 EncodingAESKey 点击随机生成即可。
 消息加解密方式选择明文模式
 确认无误的话，点击提交。
@@ -170,5 +175,8 @@ EncodingAESKey 点击随机生成即可。
 打开公众号，随意输入文字发送，公众号会回复给你相同的文字。
 ![image.png](https://i.loli.net/2020/02/27/wzjKcWY8ksu9Ppt.png)
 下一篇我们讲讲如何处理用户消息，实现自定义回复功能。
-个人公众号：欢迎关注
-![mp-qrcode.jpg](https://i.loli.net/2020/02/27/SFPZbhcxEkr8LGq.jpg)
+
+1. 看到这里啦，点个 `赞` 支持一下吧。
+2. 关注公众号 `前端糖果屋` 互相学习鸭。
+3. 添加微信 `uumovies` ，拉你进 `技术交流群`，一起探讨人生。
+   ![202052154453](https://static.iiter.cn/mp_footer.png)
