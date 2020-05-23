@@ -15,8 +15,9 @@
 - [x] [6.掘金动态头像上传](./juejin/掘金动态头像上传.md)
 
 - [x] [7.nodejs 实现实时爬取微博热搜](./weibo-crawler/weibo-crawler.md)
-
-- [ ] [8.前端经典刁钻面试题吐血整理](./mianshi/README.md)
+- [x] [8.nodejs 结合 wechaty 实现你的微信群聊机器人一(web 协议)](./wechaty/wechaty-web.md)
+- [x] [9.nodejs 结合 wechaty 实现你的微信群聊机器人二(iPad 协议)](./wechaty/wechaty-web.md)
+- [ ] [10.前端经典刁钻面试题吐血整理](./mianshi/README.md)
 
 程序员导航站：[https://iiter.cn](https://iiter.cn)
 
