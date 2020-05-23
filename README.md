@@ -26,4 +26,7 @@
 1. 看到这里啦，点个 `在看` 支持一下吧。
 2. 关注公众号 `前端糖果屋` 互相学习鸭。
 3. 添加微信 `uumovies` ，拉你进 `技术交流群` 探讨人生。
-   ![202052154453](https://static.iiter.cn/mp_footer.png)
+   ![扫码立即关注](https://static.iiter.cn/mp_footer.png)
+   
+   
+   点亮 在看 涨工资。
