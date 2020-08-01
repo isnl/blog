@@ -3,8 +3,6 @@
 - [html篇](./html.md)
 - [css 篇](./css.md)
 - [javascript 篇](./js.md)
-- 数组、对象、
-- es6
 - 设计模式
 - vue 篇
 - react 篇
