@@ -259,10 +259,62 @@ jsonp、 iframe、window.name、window.postMessage、服务器上设置代理页
 闭包是指有权访问另一个函数作用域中变量的函数，创建闭包的最常见的方式就是在
 一个函数内创建另一个函数，通过另一个函数访问这个函数的局部变量,利用闭包可以突
 破作用链域，将函数内部的变量和方法传递到外部。
-闭包的特性：  
-- 函数内再嵌套函数  
-- 内部函数可以引用外层的参数和变量  
+闭包的特性：
+
+- 函数内再嵌套函数
+- 内部函数可以引用外层的参数和变量
 - 参数和变量不会被垃圾回收机制回收
+
+#### 14. 简单概括浏览器事件模型，如何获得资源 dom 节点
+
+在各种浏览器中存在三种事件模型:原始事件模型( original event model),DOM2 事件
+模型,IE 事件模型.其中原始的事件模型被所有浏览器所支持,而 DOM2 中所定义的事件
+模型目前被除了 IE 以外的所有主流浏览器支持。
+浏览器事件模型分为三个阶段
+1、捕获阶段
+2、目标阶段
+3、冒泡阶段
+Dom 节点获取方法：
+
+- 1．通过 id 属性获取 document.getElementById()
+- 2．通过 name 属性获取 document.getElementsByName()
+- 3．通过标签名获取 document.getElementsByTagName()
+- 4．通过 class 属性获取 document.getElementsByClassName()
+- 5．原生 js 中的 querySelector 和 querySelectorAll 方法也同样可以获取到相应的
+  dom 节点，相似于 jquery，但比 jq 更快
+
+#### 15. 简述 ECMAScript6 的新特性
+
+- 增加块作用域
+- 增加 let const
+- 解构赋值
+- 函数参数扩展 （函数参数可以使用默认值、不定参数以及拓展参数）
+- 增加 class 类的支持
+- 增加箭头函数
+- 增加模块和模块加载（ES6 中开始支持原生模块化啦）
+- math, number, string, array, object 增加新的 API
+
+#### 16. Apply 和 call 方法的异同
+
+相同点:
+
+- 两个方法产生的作用是完全一样的，都是改变上下文this指向的。第一个参数都是对象
+
+不同点:
+
+- call()方法参数将依次传递给借用的方法作参数，即 fn.call(thisobj, arg1,arg2,arg3...argn)，有 n 个参数
+- apply()方法第一个参数是对象，第二个参数是数组 fn.apply(thisobj,arg)，此处的 arg 是一个数组,只有两个参数
+
+*注：bind也是用来改变上下文this指向的，参数与call一致，返回的是个函数
+
+#### 17. 在 javascript 中什么是伪数组，如何将伪数组转化为标准数组
+这里把符合以下条件的对象称为伪数组（也称作是类数组）：
+1，具有 length 属性
+2，按索引方式存储数据
+3，不具有数组的 push,pop 等方法
+伪数组（类数组）：无法直接调用数组方法或期望 length 属性有什么特殊的行为，不具有数组的 push,pop 等方法，但仍可以对真正数组遍历方法来遍历它们。典型的是函数的 argument 参数，还有像调用 document.getElementsByTagName, document.childNodes 之类的,它们返回的 NodeList 对象都属于伪数组
+
+
 
 #### 原型和原型链
 
@@ -291,8 +343,6 @@ defer 和 async、动态创建 DOM 方式（用得最多）、按需异步载入
 #### amd,cmd,requirejs
 
 #### ES6
-
-#### call、apply、bind 区别
 
 #### 浏览器内核
 

@@ -248,10 +248,63 @@ rgba()和 opacity 都能实现透明效果，但最大的不同是 opacity 作�
 px 和 em 都是长度单位，区别是，px 的值是固定的，指定是多少就是多少，计算比较容易。em 得值不是固定的，并且 em 会继承父级元素的字体大小。
 浏览器的默认字体高都是 16px。所以未经调整的浏览器都符合: 1em=16px。那么 12px=0.75em, 10px=0.625em。
 
-#### 23. 谈谈你对html5的了解
+#### 23. 谈谈你对 html5 的了解
+
 - 良好的移动性，以移动设备为主。
 - 响应式设计，以适应自动变化的屏幕尺寸
 - 支持离线缓存技术，webStorage 本地缓存
 - 新增 canvas，video，audio 等新标签元素。新增特殊内容元素：article，footer，
-header，nav，section 等，新增表单控件：calendar，date，time，email，url，search。
+  header，nav，section 等，新增表单控件：calendar，date，time，email，url，search。
 - 地理定位... 6.新增 webSocket/webWork 技术
+
+#### 24. css 引入的方式有哪些，link 和@import 的区别是什么
+
+有四种形式:  
+1.链入外部样式表,就是把样式表保存为一个样式表文件,然后在页面中用`<link rel="stylesheet" type="text/css" href="*.css">`链接这个样式表文件
+
+2.内部样式表,就是把样式表放到页面的`<head>`区里。
+
+```html
+<style type="text/css">
+  div {
+    height: 600px;
+  }
+</style>
+```
+
+3.导入外部样式表,用@import,在`<head>`与`</head>`之间，
+
+```html
+<style type="text/css">
+  @import "index.css";
+</style>
+```
+
+4.内嵌样式,就是在标签内写入 style="",比如:
+
+```html
+<div style="background:#cccccc"></div>
+```
+
+区别：
+
+- link 是 XHTML 标签，除了加载 CSS 外，还可以定义 RSS 等其他事务；@import 属于 CSS 范畴，只能加载 CSS。
+- link 引用 CSS 时，在页面载入时同时加载；@import 需要页面网页完全载入以后加载。
+- link 是 XHTML 标签，无兼容问题；@import 是在 CSS2.1 提出的，低版本的浏览器不支持。
+- link 支持使用 Javascript 控制 DOM 去改变样式；而@import 不支持。
+
+#### 25. H5 中新增的单位 rem 是什么意思，和 em 的关系，以及 rem 在自适应布局中的应用方法
+
+**Rem 为单位：**
+rem 是相对于根元素`<html>`的“font 一 size”为基准。比如说我们给 html 设置 font 一 size 为 100px，那么我们要给 html 中的 p 标签设置 16px 的字体，font 一 size 设置.16rem 就可以，在这里 16px=.16rem。
+**Em 为单位：**
+这种技术需要一个参考点，一般都是以`<body>`的“font 一 size”为基准。比如说我们使用“1em”等于“10px”来改变默认值“1em=16px”，这样一来，我们设置字体大小相当于“14px”时，只需要将其值设置为“1.4em”。
+**这个单位与 em 有什么区别呢？**
+区别在于使用 rem 为元素设定字体大小时，仍然是相对大小，但相对的只是 HTML
+根元素。这个单位可谓集相对大小和绝对大小的优点于一身，通过它既可以做到只修改
+根元素就成比例地调整所有字体大小，又可以避免字体大小逐层复合的连锁反应。目前，
+除了 IE8 及更早版本外，所有浏览器均已支持 rem。对于不支持它的浏览器，应对方法
+也很简单，就是多写一个绝对单位的声明。这些浏览器会忽略用 rem 设定的字体大小。
+
+#### 26. 如何实现浏览器内多个标签页之间的通信？
+通过 WebSocket 或 SharedWorker 把客户端和服务器端建立 socket 连接，从而实现通信；也可以调用 localstorge、cookies 等本地存储方法。
