@@ -298,23 +298,59 @@ Dom 节点获取方法：
 
 相同点:
 
-- 两个方法产生的作用是完全一样的，都是改变上下文this指向的。第一个参数都是对象
+- 两个方法产生的作用是完全一样的，都是改变上下文 this 指向的。第一个参数都是对象
 
 不同点:
 
 - call()方法参数将依次传递给借用的方法作参数，即 fn.call(thisobj, arg1,arg2,arg3...argn)，有 n 个参数
 - apply()方法第一个参数是对象，第二个参数是数组 fn.apply(thisobj,arg)，此处的 arg 是一个数组,只有两个参数
 
-*注：bind也是用来改变上下文this指向的，参数与call一致，返回的是个函数
+\*注：bind 也是用来改变上下文 this 指向的，参数与 call 一致，返回的是个函数
 
 #### 17. 在 javascript 中什么是伪数组，如何将伪数组转化为标准数组
+
 这里把符合以下条件的对象称为伪数组（也称作是类数组）：
 1，具有 length 属性
 2，按索引方式存储数据
 3，不具有数组的 push,pop 等方法
 伪数组（类数组）：无法直接调用数组方法或期望 length 属性有什么特殊的行为，不具有数组的 push,pop 等方法，但仍可以对真正数组遍历方法来遍历它们。典型的是函数的 argument 参数，还有像调用 document.getElementsByTagName, document.childNodes 之类的,它们返回的 NodeList 对象都属于伪数组
 
+#### 18. Javascript 的 typeof 返回哪些数据类型;列举 3 种强制类型 转换和 2 中隐式类型转换
 
+**返回数据类型**
+undefined
+string
+boolean
+number
+symbol(ES6)
+Object
+Function
+**强制类型转换**
+Number(参数) 把任何类型转换成数值类型。
+parseInt(参数 1，参数 2) 将字符串转换成整数
+parseFloat()将字符串转换成浮点数字
+string(参数):可以将任何类型转换成字符串
+Boolean() 可以将任何类型的值转换成布尔值。
+
+**隐式类型转换**  
+1.四则运算
+加法运算符+是双目运算符，只要其中一个是 String 类型，表达式的值便是一个 String。
+对于其他的四则运算，只有其中一个是 Number 类型，表达式的值便是一个 Number。
+对于非法字符的情况通常会返回 NaN:
+'1' _ 'a' // => NaN，这是因为 parseInt(a)值为 NaN，1 _ NaN 还是 NaN  
+2.判断语句
+判断语句中的判断条件需要是 Boolean 类型，所以条件表达式会被隐式转换为 Boolean。 其转换规则同 Boolean 的构造函数。比如:
+
+```js
+var obj = {};
+if (obj) {
+  while (obj);
+}
+```
+
+3.Native 代码调用
+JavaScript 宿主环境都会提供大量的对象，它们往往不少通过 JavaScript 来实现 的。 JavaScript 给这些函数传入的参数也会进行隐式转换。例如 BOM 提供的 alert 方 法接受 String 类型的参数:
+alert({a: 1}); // => [object Object]
 
 #### 原型和原型链
 
