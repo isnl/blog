@@ -88,4 +88,12 @@ module.exports = {
 
 使用域名访问网站，发现会强制https。
 
+艾特网就是一个典型的nuxt项目：[艾特网 - 程序员导航站](https://iiter.cn)  
+
+
 其他诸如此类的`express`,`koa`,`eggjs`等项目的部署都大同小异。这里不再赘述。
+
+1. 看到这里啦，点个 `赞` 支持一下吧。
+2. 关注公众号 `前端糖果屋` 互相学习鸭。
+3. 添加微信 `itRobot` ，拉你进 `技术交流群` 探讨人生。
+   ![扫码立即关注](https://static.iiter.cn/mp_footer.png)
